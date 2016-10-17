@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="hoodpopes">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hood_Popes</title>
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+    <link rel="stylesheet" href="dependencies/meyerreset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div id="hp-navbar-container">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Videos</a>
+            <a href="#">Deck Builder</a>
+            <a href="#">Calendar</a>
+        </nav>
+    </div>
+    <div class="page-container">
+        <main ng-view></main>
+    </div>
+    
+    <!-- jQuery 3.1.1 -->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery UI 1.12.1 -->
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Angular JS 1.5.8 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <!-- Angular Route -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <!-- app.js -->
+    <script src="js/app.js"></script>
+</body>
+</html>
