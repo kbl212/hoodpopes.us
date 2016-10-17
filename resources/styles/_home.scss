@@ -1,11 +1,60 @@
-html, body {
+/*
+    #fff	White
+    #488BF4	CR BLUE
+    #DC563F	CR RED
+    #F0F2F2	CR GRAY
+    #292929	CR BLACK
+*/
+
+$cr-blue: #488BF4;
+$cr-red: #DC563F;
+$cr-gray: #F0F2F2;
+$cr-black: #292929;
+
+
+
+
+html,
+body {
     font-family: "Wendy One", sans-serif;
 }
 
-nav {
-    height: 75px;
-    border-bottom: 1px solid #000;
-    -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+a {
+    text-decoration: none;
+}
+
+#hp-navbar-container {
+    width: 100%;
+    nav {
+        padding-top: 10px;
+        background-color: $cr-red;
+        height: 75px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 3px solid #000;
+        -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+        a {
+            padding: 5px;
+            width: 250px;
+            text-align: center;
+            border-radius: 10px;
+            width: 100px;
+            margin-left: 50px;
+            margin-right: 50px;
+            font-size: 32px;
+            transition: 0.2s ease all;
+            background-color: aliceblue;
+        }
+        a:hover {
+            -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+        a:focus {
+            text-decoration: none;
+        }
+    }
 }
