@@ -9,8 +9,27 @@ html,
 body {
   font-family: "Wendy One", sans-serif; }
 
+body {
+  background: url(../images/Clash_Royale_Forum_Background.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+h1 {
+  font-size: 48px;
+  text-align: center; }
+
+h2 {
+  font-size: 36px; }
+
+.container {
+  background-color: #F0F2F2;
+  min-height: 700px; }
+
 a {
   text-decoration: none; }
+
+p {
+  font-size: 16px; }
 
 #hp-navbar-container {
   width: 100%; }
@@ -35,6 +54,9 @@ a {
       font-size: 32px;
       transition: 0.2s ease all;
       background-color: aliceblue; }
+    #hp-navbar-container nav .active-nav {
+      background-color: #488BF4;
+      color: #fff; }
     #hp-navbar-container nav a:hover {
       -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
@@ -42,3 +64,17 @@ a {
       text-decoration: none; }
     #hp-navbar-container nav a:focus {
       text-decoration: none; }
+
+#home-container {
+  text-align: center; }
+  #home-container .clan-tag {
+    font-size: 20px;
+    text-indent: 25px;
+    margin-top: 5px; }
+  #home-container img {
+    width: 80%;
+    border-radius: 10px; }
+  #home-container h2, #home-container p {
+    text-align: left;
+    width: 80%;
+    margin: 30px auto 0 auto; }
