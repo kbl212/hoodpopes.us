@@ -13,6 +13,9 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
     gulp.watch('./resources/styles/_home.scss', ['sass']);
+    gulp.watch('./resources/styles/_videos.scss', ['sass']);
+    gulp.watch('./resources/styles/_calendar.scss', ['sass']);
+    gulp.watch('./resources/styles/_deck.scss', ['sass']);
 })
 
 gulp.task('default', ['sass', 'watch']);

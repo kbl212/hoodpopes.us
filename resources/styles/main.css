@@ -23,7 +23,8 @@ h2 {
 
 .container {
   background-color: #F0F2F2;
-  min-height: 700px; }
+  min-height: 700px;
+  padding-bottom: 50px; }
 
 a {
   text-decoration: none; }
@@ -69,8 +70,9 @@ p {
   text-align: center; }
   #home-container .clan-tag {
     font-size: 20px;
-    text-indent: 25px;
-    margin-top: 5px; }
+    margin-top: 20px;
+    padding: 5px;
+    border: 5px solid #000; }
   #home-container img {
     width: 80%;
     border-radius: 10px; }
@@ -78,3 +80,13 @@ p {
     text-align: left;
     width: 80%;
     margin: 30px auto 0 auto; }
+
+#videos-container {
+  text-align: center; }
+  #videos-container h2 {
+    margin-bottom: 50px; }
+  #videos-container .video-container span {
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 10px; }
