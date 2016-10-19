@@ -10,7 +10,7 @@ var app = express();
 express.static(__dirname);
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/resources'));
+app.use(express.static(__dirname + '/public'));
 
 var port = process.env.PORT || 3000;
 
