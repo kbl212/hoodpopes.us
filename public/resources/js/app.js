@@ -4,19 +4,19 @@ app.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
         .when('/home', {
-            templateUrl: '../html/home.html',
+            templateUrl: 'resources/html/home.html',
             controller: 'homeCtrl'
         })
         .when('/videos', {
-            templateUrl: '../html/videos.html',
+            templateUrl: 'resources/html/videos.html',
             controller: 'videosCtrl'
         })
         .when('/deckbuilder', {
-            templateUrl: '../html/deckbuilder.html',
+            templateUrl: 'resources/html/deckbuilder.html',
             controller: 'deckCtrl'
         })
         .when('/calendar', {
-            templateUrl: '../html/calendar.html',
+            templateUrl: 'resources/html/calendar.html',
             controller: 'calendarCtrl'
         })
         .otherwise({
