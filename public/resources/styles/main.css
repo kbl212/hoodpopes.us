@@ -4,6 +4,7 @@
     #DC563F	CR RED
     #F0F2F2	CR GRAY
     #292929	CR BLACK
+    #F046F6 CR PURPLE
 */
 html,
 body {
@@ -90,3 +91,50 @@ p {
     text-align: center;
     font-size: 48px;
     margin-top: 10px; }
+
+#deckbuilder-container #current-deck {
+  width: 100%;
+  text-align: center; }
+  #deckbuilder-container #current-deck .card-container {
+    -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 300px;
+    width: 190px;
+    overflow: hidden; }
+    #deckbuilder-container #current-deck .card-container .card-name {
+      width: 100%;
+      border-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      text-align: center;
+      font-size: 24px;
+      background-color: #488BF4;
+      position: absolute;
+      top: 0; }
+    #deckbuilder-container #current-deck .card-container img {
+      margin-top: 25px;
+      margin-left: -10px; }
+    #deckbuilder-container #current-deck .card-container .elixir-ball {
+      display: inline-block;
+      margin-left: 3px;
+      height: 20px;
+      width: 20px;
+      border: 1px solid #000;
+      border-radius: 100px;
+      background-color: #F046F6; }
+    #deckbuilder-container #current-deck .card-container .card-cost {
+      width: 100%;
+      border-radius: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      text-align: center;
+      font-size: 24px;
+      background-color: #488BF4;
+      position: absolute;
+      bottom: 0; }

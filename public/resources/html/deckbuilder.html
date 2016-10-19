@@ -1,0 +1,9 @@
+<div class="container" id="deckbuilder-container" ng-controller="deckCtrl">
+    <div id="current-deck">
+        <div class="card-container" ng-repeat="card in currentDeck">
+            <div class="card-name">{{card.name}}</div>
+            <img ng-src="{{card.picture}}">
+            <div class="card-cost">{{card.cost}}<div class="elixir-ball"></div></div>
+        </div>
+    </div>
+</div>
