@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-express.static(__dirname);
-
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
