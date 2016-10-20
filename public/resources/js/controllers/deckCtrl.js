@@ -85,11 +85,12 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
         $scope.divisor = 8;
         $scope.totalElixirCost = 0;
         for (var i = 0; i < $scope.currentDeck.length; i++) {
-            if ($scope.currentDeck[i].name != "Mirror") {
-                $scope.totalElixirCost += $scope.currentDeck[i].cost;
-            }
-            else {
+            console.log("current total: ", $scope.totalElixirCost);
+            if ($scope.currentDeck[i].name === "Mirror") {
                 $scope.totalElixirCost += 2;
+
+            } else {
+                $scope.totalElixirCost += Number($scope.currentDeck[i].cost);
             }
         }
         $scope.averageElixirCost = ($scope.totalElixirCost / $scope.divisor).toFixed(1);
@@ -99,6 +100,19 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
     $scope.calculateAvgElixir();
 
     $scope.allDeck = [
+        {
+            name: "Minions",
+            cost: 3,
+            picture: "resources/images/MinionsCard.png",
+            type: "Troop"
+        },
+
+        {
+            name: "Minion Horde",
+            cost: 5,
+            picture: "resources/images/MinionHordeCard.png",
+            type: "Troop"
+        },
         {
             name: "Giant Skeleton",
             cost: 6,
@@ -262,6 +276,12 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
             type: "Troop"
         },
         {
+            name: "Musketeer",
+            cost: "4",
+            picture: "resources/images/MusketeerCard.png",
+            type: "Troop"
+        },
+        {
             name: "Graveyard",
             cost: 5,
             picture: "resources/images/GraveyardCard.png",
@@ -273,6 +293,132 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
             picture: "resources/images/MirrorCard.png",
             type: "Spell"
         },
+        {
+            name: "The Log",
+            cost: "2",
+            picture: "resources/images/TheLogCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Zap",
+            cost: "2",
+            picture: "resources/images/ZapCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Poison",
+            cost: "4",
+            picture: "resources/images/PoisonCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Rocket",
+            cost: "6",
+            picture: "resources/images/RocketCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Fireball",
+            cost: "4",
+            picture: "resources/images/FireballCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Rage",
+            cost: "4",
+            picture: "resources/images/RageCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Lightning",
+            cost: "6",
+            picture: "resources/images/LightningCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Goblin Barrel",
+            cost: "3",
+            picture: "resources/images/GoblinBarrelCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Arrows",
+            cost: "3",
+            picture: "resources/images/ArrowsCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Freeze",
+            cost: "4",
+            picture: "resources/images/FreezeCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Tombstone",
+            cost: 6,
+            picture: "resources/images/TombstoneCard.png",
+            type: "Troop"
+        },
+        {
+            name: "Bomb Tower",
+            cost: "5",
+            picture: "resources/images/BombTowerCard.png",
+            type: "Building"
+        },
+        {
+            name: "Elixir Collector",
+            cost: "6",
+            picture: "resources/images/ElixirCollectorCard.png",
+            type: "Building"
+        },
+        {
+            name: "X-Bow",
+            cost: "6",
+            picture: "resources/images/X-BowCard.png",
+            type: "Building"
+        },
+        {
+            name: "Inferno Tower",
+            cost: "5",
+            picture: "resources/images/InfernoTowerCard.png",
+            type: "Building"
+        },
+        {
+            name: "Tesla",
+            cost: "4",
+            picture: "resources/images/TeslaCard.png",
+            type: "Building"
+        },
+        {
+            name: "Mortar",
+            cost: "4",
+            picture: "resources/images/MortarCard.png",
+            type: "Building"
+        },
+        {
+            name: "Cannon",
+            cost: "3",
+            picture: "resources/images/CannonCard.png",
+            type: "Building"
+        },
+        {
+            name: "Goblin Hut",
+            cost: "5",
+            picture: "resources/images/GoblinHutCard.png",
+            type: "Building"
+        },
+        {
+            name: "Furnace",
+            cost: "4",
+            picture: "resources/images/FurnaceCard.png",
+            type: "Building"
+        },
+        {
+            name: "Barbarian Hut",
+            cost: "7",
+            picture: "resources/images/BarbarianHutCard.png",
+            type: "Building"
+        }
     ];
 
 
