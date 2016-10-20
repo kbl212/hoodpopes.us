@@ -1,6 +1,34 @@
-app.controller('deckCtrl', function ($scope) {
+app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
 
+    $scope.GoToTop = function (cardIn) {
+        if (document.querySelector('.current-deck-title')) {
+            $location.hash('deckbuilder');
+            $anchorScroll();
+            $scope.cardSelect = 'selecting';
+            console.log($scope.cardSelect);
+        }
+        $scope.currCard = cardIn;
+        $scope.currCardIndex = $scope.allDeck.indexOf(cardIn);
+        $scope.cardSwitching = 'card-switching';
+    };
 
+    $scope.cardSwitch = function (cardIn) {
+        if ($scope.cardSelect === 'selecting') {
+            $scope.cardToSwitchOut = $scope.currentDeck[$scope.currentDeck.indexOf(cardIn)];
+            $scope.cardToSwitchIn = $scope.currCard;
+
+            $scope.currentDeck.splice($scope.currentDeck.indexOf(cardIn), 1, $scope.cardToSwitchIn);
+
+            $scope.allDeck.splice($scope.currCardIndex, 1);
+            $scope.allDeck.push($scope.cardToSwitchOut);
+
+            $scope.cardSelect = "inactive";
+
+            $scope.calculateAvgElixir();
+        }
+    }
+
+    $scope.cardSelect = "inactive";
 
     $scope.currentDeck = [
         {
@@ -53,15 +81,13 @@ app.controller('deckCtrl', function ($scope) {
         }
     ];
 
-    $scope.averageElixirCost = (($scope.currentDeck[0].cost + $scope.currentDeck[1].cost + $scope.currentDeck[2].cost + $scope.currentDeck[3].cost + $scope.currentDeck[4].cost + $scope.currentDeck[5].cost + $scope.currentDeck[6].cost + $scope.currentDeck[7].cost) / 8).toFixed(1);
+    $scope.calculateAvgElixir = function () {
+        $scope.averageElixirCost = (($scope.currentDeck[0].cost + $scope.currentDeck[1].cost + $scope.currentDeck[2].cost + $scope.currentDeck[3].cost + $scope.currentDeck[4].cost + $scope.currentDeck[5].cost + $scope.currentDeck[6].cost + $scope.currentDeck[7].cost) / 8).toFixed(1);
+    }
+
+    $scope.calculateAvgElixir();
 
     $scope.allDeck = [
-        {
-            name: "Giant",
-            cost: 5,
-            picture: "resources/images/GiantCard.png",
-            type: "Troop"
-        },
         {
             name: "Giant Skeleton",
             cost: 6,

@@ -1,7 +1,8 @@
 <div class="container" id="deckbuilder-container" ng-controller="deckCtrl">
-    <h1>Current Deck</h1>
+    <h1 class="current-deck-title" id="deckbuilder">Current Deck</h1>
+    <p id="which-card" ng-show="cardSelect === 'selecting'">Which card would you like to replace with {{currCard.name}}?<button class="btn" ng-click="cardSelect = 'inactive'">Cancel</button></p>
     <div id="current-deck">
-        <div class="card-container" ng-repeat="card in currentDeck">
+        <div ng-class="cardSwitching" class="card-container" ng-repeat="card in currentDeck" ng-click="cardSwitch(card)">
             <div class="card-name">{{card.name}}</div>
             <img ng-src="{{card.picture}}">
             <div class="card-cost">{{card.cost}}<div class="elixir-ball"></div></div>
@@ -13,10 +14,10 @@
     <br>
     <h1>Other Cards</h1>
     <div id="other-cards">
-        <div class="card-container" ng-repeat="card in allDeck">
+        <div class="card-container" ng-repeat="card in allDeck | orderBy: '+name'">
             <div class="card-name">{{card.name}}</div>
             <img ng-src="{{card.picture}}">
-            <div class="card-cost">{{card.cost}}<div class="elixir-ball"></div></div>
+            <div class="card-cost">{{card.cost}}<div class="elixir-ball"></div><div class="use-this-card" ng-click="GoToTop(card)">Use Card</div></div>
         </div>
     </div>
 </div>

@@ -29,4 +29,8 @@ $(document).ready(function () {
         $('#nav-deck').removeClass('active-nav');
         $('#nav-home').removeClass('active-nav');
     });
+    
+    /*$('.card-container').hover(function() {
+        $('.use-this-card').css("display", "block");
+    });*/
 })
