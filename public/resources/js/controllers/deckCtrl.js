@@ -75,16 +75,27 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
         },
         {
             name: "Fire Spirits",
-            cost: 5,
+            cost: 2,
             picture: "resources/images/FireSpiritsCard.png",
             type: "Troop"
         }
     ];
 
     $scope.calculateAvgElixir = function () {
-        $scope.averageElixirCost = (($scope.currentDeck[0].cost + $scope.currentDeck[1].cost + $scope.currentDeck[2].cost + $scope.currentDeck[3].cost + $scope.currentDeck[4].cost + $scope.currentDeck[5].cost + $scope.currentDeck[6].cost + $scope.currentDeck[7].cost) / 8).toFixed(1);
-    }
+        $scope.divisor = 8;
+        $scope.totalElixirCost = 0;
+        for (var i = 0; i < $scope.currentDeck.length; i++) {
+            if ($scope.currentDeck[i].name != "Mirror") {
+                $scope.totalElixirCost += $scope.currentDeck[i].cost;
+            }
+            else {
+                $scope.totalElixirCost += 2;
+            }
+        }
+        $scope.averageElixirCost = ($scope.totalElixirCost / $scope.divisor).toFixed(1);
+        console.log($scope.totalElixirCost + " / " + $scope.divisor + " = " + $scope.averageElixirCost);
 
+    }
     $scope.calculateAvgElixir();
 
     $scope.allDeck = [
@@ -249,6 +260,18 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
             cost: 4,
             picture: "resources/images/WizardCard.png",
             type: "Troop"
+        },
+        {
+            name: "Graveyard",
+            cost: 5,
+            picture: "resources/images/GraveyardCard.png",
+            type: "Spell"
+        },
+        {
+            name: "Mirror",
+            cost: "?",
+            picture: "resources/images/MirrorCard.png",
+            type: "Spell"
         },
     ];
 
