@@ -162,7 +162,7 @@ p {
     overflow: hidden; }
     #deckbuilder-container #other-cards .card-container .card-name {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 5px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       text-align: center;
@@ -175,7 +175,7 @@ p {
       margin-left: -10px; }
     #deckbuilder-container #other-cards .card-container .card-cost {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 5px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       text-align: center;
