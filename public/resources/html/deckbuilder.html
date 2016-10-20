@@ -1,11 +1,22 @@
 <div class="container" id="deckbuilder-container" ng-controller="deckCtrl">
+    <h1>Current Deck</h1>
     <div id="current-deck">
         <div class="card-container" ng-repeat="card in currentDeck">
             <div class="card-name">{{card.name}}</div>
             <img ng-src="{{card.picture}}">
             <div class="card-cost">{{card.cost}}<div class="elixir-ball"></div></div>
         </div>
+        <br>
+        <div id="average-elixir-cost">Average Elixir Cost: {{averageElixirCost}}<div class="elixir-ball"></div> </div>
+    </div>
+    <br>
+    <br>
+    <h1>Other Cards</h1>
+    <div id="other-cards">
+        <div class="card-container" ng-repeat="card in allDeck">
+            <div class="card-name">{{card.name}}</div>
+            <img ng-src="{{card.picture}}">
+            <div class="card-cost">{{card.cost}}<div class="elixir-ball"></div></div>
+        </div>
     </div>
 </div>
-
-<!-- Testing a git push... -->

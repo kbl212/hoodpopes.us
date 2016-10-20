@@ -102,14 +102,14 @@ p {
     position: relative;
     display: inline-block;
     margin: 20px;
-    border: 1px solid #000;
+    border: 3px solid #000;
     border-radius: 10px;
     height: 300px;
     width: 190px;
     overflow: hidden; }
     #deckbuilder-container #current-deck .card-container .card-name {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 5px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       text-align: center;
@@ -120,15 +120,60 @@ p {
     #deckbuilder-container #current-deck .card-container img {
       margin-top: 25px;
       margin-left: -10px; }
-    #deckbuilder-container #current-deck .card-container .elixir-ball {
-      display: inline-block;
-      margin-left: 3px;
-      height: 20px;
-      width: 20px;
-      border: 1px solid #000;
-      border-radius: 100px;
-      background-color: #F046F6; }
     #deckbuilder-container #current-deck .card-container .card-cost {
+      width: 100%;
+      border-radius: 5px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      text-align: center;
+      font-size: 24px;
+      background-color: #488BF4;
+      position: absolute;
+      bottom: 0; }
+  #deckbuilder-container #current-deck .elixir-ball {
+    display: inline-block;
+    margin-left: 3px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    background-color: #F046F6;
+    vertical-align: bottom;
+    margin-bottom: 7px; }
+  #deckbuilder-container #current-deck #average-elixir-cost {
+    width: 100%;
+    text-align: center;
+    font-size: 24px; }
+
+#deckbuilder-container #other-cards {
+  width: 100%;
+  text-align: center; }
+  #deckbuilder-container #other-cards .card-container {
+    -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    height: 300px;
+    width: 190px;
+    overflow: hidden; }
+    #deckbuilder-container #other-cards .card-container .card-name {
+      width: 100%;
+      border-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      text-align: center;
+      font-size: 24px;
+      background-color: #488BF4;
+      position: absolute;
+      top: 0; }
+    #deckbuilder-container #other-cards .card-container img {
+      margin-top: 25px;
+      margin-left: -10px; }
+    #deckbuilder-container #other-cards .card-container .card-cost {
       width: 100%;
       border-radius: 10px;
       border-top-left-radius: 0;
@@ -138,3 +183,13 @@ p {
       background-color: #488BF4;
       position: absolute;
       bottom: 0; }
+  #deckbuilder-container #other-cards .elixir-ball {
+    display: inline-block;
+    margin-left: 3px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    background-color: #F046F6;
+    vertical-align: bottom;
+    margin-bottom: 7px; }
