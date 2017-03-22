@@ -238,3 +238,6 @@ p {
   -moz-transform: scale(1.02);
   -o-transform: scale(1.02);
   transform: scale(1.02); }
+
+#coc-container table td {
+  width: 50px; }
