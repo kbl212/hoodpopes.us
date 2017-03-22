@@ -14,7 +14,6 @@ app.controller('cocCtrl', function ($scope, $http) {
             },
             error: function () {
                 console.log("request error");
-                console.log(xhr.statusText);
             }
 
         });
