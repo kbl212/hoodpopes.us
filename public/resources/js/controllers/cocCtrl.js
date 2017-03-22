@@ -13,6 +13,7 @@ app.controller('cocCtrl', function ($scope, $http) {
                 console.log(JSON.stringify(data));
             },
             error: function () {
+                console.log(xhr.HEADERS_RECEIVED);
                 console.log("request error");
             }
 
