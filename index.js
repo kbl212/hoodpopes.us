@@ -13,6 +13,13 @@ app.use(express.static(__dirname + '/public'));
 
 var port = process.env.PORT || 3000;
 
+var globalTunnel = require('global-tunnel');
+
+globalTunnel.initialize({
+  host: process.env.QUOTAGUARDSTATIC_URL,
+  port: 8080
+});
+
 app.listen(port, function () {
     console.log('connected to port ', port);
 })
