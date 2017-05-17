@@ -1,35 +1,5 @@
 app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
 
-    $scope.GoToTop = function (cardIn) {
-        if (document.querySelector('.current-deck-title')) {
-            $location.hash('deckbuilder');
-            $anchorScroll();
-            $scope.cardSelect = 'selecting';
-            console.log($scope.cardSelect);
-        }
-        $scope.currCard = cardIn;
-        $scope.currCardIndex = $scope.allDeck.indexOf(cardIn);
-        $scope.cardSwitching = 'card-switching';
-    };
-
-    $scope.cardSwitch = function (cardIn) {
-        if ($scope.cardSelect === 'selecting') {
-            $scope.cardToSwitchOut = $scope.currentDeck[$scope.currentDeck.indexOf(cardIn)];
-            $scope.cardToSwitchIn = $scope.currCard;
-
-            $scope.currentDeck.splice($scope.currentDeck.indexOf(cardIn), 1, $scope.cardToSwitchIn);
-
-            $scope.allDeck.splice($scope.currCardIndex, 1);
-            $scope.allDeck.push($scope.cardToSwitchOut);
-
-            $scope.cardSelect = "inactive";
-
-            $scope.calculateAvgElixir();
-        }
-    }
-
-    $scope.cardSelect = "inactive";
-
     $scope.currentDeck = [
         {
             name: "Archers",
@@ -80,24 +50,6 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
             type: "Troop"
         }
     ];
-
-    $scope.calculateAvgElixir = function () {
-        $scope.divisor = 8;
-        $scope.totalElixirCost = 0;
-        for (var i = 0; i < $scope.currentDeck.length; i++) {
-            console.log("current total: ", $scope.totalElixirCost);
-            if ($scope.currentDeck[i].name === "Mirror") {
-                $scope.totalElixirCost += 2;
-
-            } else {
-                $scope.totalElixirCost += Number($scope.currentDeck[i].cost);
-            }
-        }
-        $scope.averageElixirCost = ($scope.totalElixirCost / $scope.divisor).toFixed(1);
-        console.log($scope.totalElixirCost + " / " + $scope.divisor + " = " + $scope.averageElixirCost);
-
-    }
-    $scope.calculateAvgElixir();
 
     $scope.allDeck = [
         {
@@ -421,6 +373,55 @@ app.controller('deckCtrl', function ($scope, $location, $anchorScroll) {
         }
     ];
 
+    $scope.cardSelect = "inactive";
+
+    $scope.GoToTop = function (cardIn) {
+        $scope.cardSwitching = 'card-switching';
+
+        $location.hash('deckbuilder');
+        $anchorScroll();
+
+        $scope.cardSelect = 'selecting';
+        console.log($scope.cardSelect);
+        $scope.currCard = cardIn;
+        $scope.currCardIndex = $scope.allDeck.indexOf(cardIn);
+    };
+
+    $scope.cardSwitch = function (cardIn) {
+        if ($scope.cardSelect === 'selecting') {
+            $scope.cardToSwitchOut = $scope.currentDeck[$scope.currentDeck.indexOf(cardIn)];
+            $scope.cardToSwitchIn = $scope.currCard;
+
+            $scope.currentDeck.splice($scope.currentDeck.indexOf(cardIn), 1, $scope.cardToSwitchIn);
+
+            $scope.allDeck.splice($scope.currCardIndex, 1);
+            $scope.allDeck.push($scope.cardToSwitchOut);
+
+
+            $scope.cardSwitching = "inactive";
+            $scope.cardSelect = "inactive";
+
+            $scope.calculateAvgElixir();
+        }
+    }
+
+    $scope.calculateAvgElixir = function () {
+        $scope.divisor = 8;
+        $scope.totalElixirCost = 0;
+        for (var i = 0; i < $scope.currentDeck.length; i++) {
+            if ($scope.currentDeck[i].name === "Mirror") {
+                $scope.totalElixirCost += 2;
+
+            } else {
+                $scope.totalElixirCost += Number($scope.currentDeck[i].cost);
+            }
+        }
+        $scope.averageElixirCost = ($scope.totalElixirCost / $scope.divisor).toFixed(1);
+
+    }
+    if (!$scope.divisor) {
+        $scope.calculateAvgElixir();
+    }
 
 
 });
