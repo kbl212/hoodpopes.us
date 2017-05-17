@@ -19,6 +19,10 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'resources/html/calendar.html',
             controller: 'calendarCtrl'
         })
+        .when('/coc', {
+            templateUrl: 'resources/html/coc.html',
+            controller: 'cocCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
         })
