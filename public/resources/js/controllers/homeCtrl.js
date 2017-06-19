@@ -4,7 +4,7 @@ app.controller('homeCtrl', function($scope) {
         $.ajax({
             url: "https://api.clashofclans.com/v1/leagues",
             beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization: Bearer ', $scope.cocApiKey);
+                xhr.setRequestHeader('Authorization', $scope.cocApiKey);
             },
             type: 'GET',
             dataType: 'jsonp',
@@ -15,7 +15,7 @@ app.controller('homeCtrl', function($scope) {
                 console.log(JSON.stringify(data));
             },
             error: function () {
-                console.log("request error");
+                console.log("request error...");
             }
 
         });
