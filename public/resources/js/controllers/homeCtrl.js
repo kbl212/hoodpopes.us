@@ -1,5 +1,6 @@
 app.controller('homeCtrl', function($scope) {
     $scope.cocApiKey = config.cocApiKey;
+    console.log($scope.cocApiKey);
     function getClanInfo() {
         $.ajax({
             url: "https://api.clashofclans.com/v1/leagues",
