@@ -45,4 +45,6 @@ app.controller('homeCtrl', function ($scope) {
         });
 
     }
+    
+    getClanInfoV2();
 });
