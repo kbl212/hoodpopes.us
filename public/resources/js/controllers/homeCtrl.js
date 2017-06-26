@@ -26,7 +26,7 @@ app.controller('homeCtrl', function ($scope, $http) {
     $scope.getClanInfoV2 = function() {
         $http({
             method: 'GET',
-            url: 'https://api.clashofclans.com/v1/locations?callback=JSON_CALLBACK',
+            url: 'https://api.clashofclans.com/v1/locations',
             headers: {
                 'Authorization': $scope.cocApiKey
             },
@@ -35,8 +35,6 @@ app.controller('homeCtrl', function ($scope, $http) {
             console.log('SUCCESS...', response);
         }, function errorCallback(response) {
             console.log('NOPE...', response);
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
         });
     }
 
