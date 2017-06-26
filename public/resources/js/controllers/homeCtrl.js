@@ -23,7 +23,7 @@ app.controller('homeCtrl', function ($scope, $http) {
     }
     getClanInfo();*/
 
-    $scope.getClanInfoV2() {
+    $scope.getClanInfoV2 = function() {
         $http({
             method: 'GET',
             url: 'https://api.clashofclans.com/v1/locations',
