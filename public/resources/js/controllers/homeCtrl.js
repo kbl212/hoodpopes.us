@@ -26,7 +26,7 @@ app.controller('homeCtrl', function ($scope, $http) {
     $scope.getClanInfoV2 = function() {
         $http({
             method: 'GET',
-            url: 'https://api.clashofclans.com/v1/locations',
+            url: 'https://api.clashofclans.com/v1/locations?callback=JSON_CALLBACK',
             headers: {
                 'Authorization': $scope.cocApiKey
             },
